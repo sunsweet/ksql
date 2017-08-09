@@ -1,0 +1,1 @@
+{"id":1,"orgId":1,"name":"ES-local","type":"elasticsearch","typeLogoUrl":"public/app/plugins/datasource/elasticsearch/img/elasticsearch.svg","access":"proxy","url":"http://localhost:9200","password":"","user":"","database":"irc_chan_msgs_per_5min","basicAuth":false,"isDefault":false,"jsonData":{"esVersion":5,"timeField":"MY_TS"}}
