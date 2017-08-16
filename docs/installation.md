@@ -1,7 +1,7 @@
 # Installation
 
-| [Overview](/docs/) | Installation | [Quick Start Guide](/docs/quickstart/) | [Syntax Reference](/docs/syntax-reference.md) | [Examples](/docs/examples.md) | [FAQ](/docs/faq.md)  |
-|----------|--------------|-------------|------------------|------------------|------------------|
+| [Overview](/docs/) | Installation | [Quick Start Guide](/docs/quickstart/) | [Concepts](/docs/concepts.md) | [Syntax Reference](/docs/syntax-reference.md) | [Examples](/docs/examples.md) | [FAQ](/docs/faq.md)  |
+|----------|--------------|-------------|------------------|------------------|------------------|------------------|
 
 > *Important: This release is a *developer preview* and is free and open-source from Confluent under the Apache 2.0 license.*
 
@@ -17,7 +17,7 @@ You can quickly install KSQL in your environment.
 1.  Navigate to the KSQL root directory and compile the KSQL code:
 
 	```bash
-	mvn clean install
+	mvn clean install -Dmaven.test.skip=true
 	```
 
 	When this command completes, the output should resemble:
@@ -35,7 +35,7 @@ You can quickly install KSQL in your environment.
 1.  Start KSQL by running the compiled JAR file. Use the local argument for the developer preview. This starts the KSQL engine locally.
 
 	```bash
-	java -jar ksql-cli/target/ksql-cli-0.1-SNAPSHOT-standalone.jar local
+	./bin/ksql-cli local
 	```
 
 	When this command completes, you should see the KSQL prompt:

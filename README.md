@@ -18,7 +18,7 @@ KSQL consists of a client and a server component.  The client is a command line 
 - [License](#license)
 
 # Quick Start Guide
-If you are ready to see the power of KSQL, try the [KSQL Quick Start](/docs/quickstart.md)! The quick start configures a single instance in a lightweight Docker container or in a Kafka cluster. It demonstrates a simple workflow using KSQL to write streaming queries against data in Kafka.
+If you are ready to see the power of KSQL, try the [KSQL Quick Start](/docs/quickstart/)! The quick start configures a single instance in a lightweight Docker container or in a Kafka cluster. It demonstrates a simple workflow using KSQL to write streaming queries against data in Kafka.
 
 # Installation
 
@@ -44,13 +44,13 @@ If you are ready to see the power of KSQL, try the [KSQL Quick Start](/docs/quic
 1.  Compile the KSQL code:
 
 	```bash
-	mvn clean install
+	mvn clean install -Dmaven.test.skip=true
 	```
 
 1.  Start KSQL by running the compiled jar file ksql-cli/target/ksql-cli-1.0-SNAPSHOT-standalone.jar. Use the local argument for the developer preview. This starts the KSQL engine locally.
 
 	```bash
-	java -jar ksql-cli/target/ksql-cli-0.1-SNAPSHOT-standalone.jar local
+	./bin/ksql-cli local
 	```
 
 	When this command completes, you should see the KSQL prompt:

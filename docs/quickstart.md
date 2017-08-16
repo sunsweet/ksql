@@ -1,7 +1,7 @@
 # Quick Start Guide
 
-| [Overview](/docs/) | [Installation](/docs/installation.md) | Quick Start Guide | [Syntax Reference](/docs/syntax-reference.md) | [Examples](/docs/examples.md) | [FAQ](/docs/faq.md)  |
-|----------|--------------|-------------|------------------|------------------|------------------|
+| [Overview](/docs/) | [Installation](/docs/installation.md) | Quick Start Guide | [Concepts](/docs/concepts.md) | [Syntax Reference](/docs/syntax-reference.md) | [Examples](/docs/examples.md) | [FAQ](/docs/faq.md)  |
+|----------|--------------|-------------|------------------|------------------|------------------|------------------|
 
 > *Important: This release is a *developer preview* and is free and open-source from Confluent under the Apache 2.0 license.*
 
@@ -129,7 +129,7 @@ Before proceeding, please check:
     GENDER   | VARCHAR(STRING) 
     ```
 
-3. Use `SELECT` to view query results as they come in. To stop viewing the query results, press `<ctrl-c>`. This stops printing to the console but it does not terminate the actual query. The query continues to run in the underyling Kafka Streams application.
+3. Use `SELECT` to view query results as they come in. To stop viewing the query results, press `<ctrl-c>`. 
 
    ```bash
    ksql> SELECT * FROM pageviews_female;

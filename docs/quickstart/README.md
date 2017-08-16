@@ -27,9 +27,9 @@ Because KSQL queries data in a Kafka cluster, you will need to bring up a Kafka 
 
 2.  After you have successfully started the Kafka cluster and started KSQL, you will see the KSQL prompt:
 
-    ``bash
+    ```bash
     ksql>
-    ``
+    ```
 
 3.  KSQL provides a structured query language to query Kafka data, so you need some data to query. For this quick start, you will produce mock streams to the Kafka cluster.
 
@@ -145,7 +145,7 @@ Before proceeding, please check:
    ksql> CREATE STREAM pageviews_female_like_89 WITH (kafka_topic='pageviews_enriched_r8_r9', value_format='DELIMITED') AS SELECT * FROM pageviews_female WHERE regionid LIKE '%_8' OR regionid LIKE '%_9';
    ```
 
-5. Create a new persistent query that counts the pageviews for each region and gender combination in a `tumbling window <http://docs.confluent.io/current/streams/developer-guide.html#tumbling-time-windows>`__ of 30 seconds when the count is greater than 1. Results from this query are written to a Kafka topic called `PAGEVIEWS_REGIONS`.
+5. Create a new persistent query that counts the pageviews for each region and gender combination in a [tumbling window](http://docs.confluent.io/current/streams/developer-guide.html#tumbling-time-windows) of 30 seconds when the count is greater than 1. Results from this query are written to a Kafka topic called `PAGEVIEWS_REGIONS`.
 
    ```bash
    ksql> CREATE TABLE pageviews_regions AS SELECT gender, regionid , COUNT(*) AS numusers FROM pageviews_female WINDOW TUMBLING (size 30 second) GROUP BY gender, regionid HAVING COUNT(*) > 1;

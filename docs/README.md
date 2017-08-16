@@ -1,13 +1,14 @@
 # KSQL Documentation
 
-| Overview | [Installation](/docs/installation.md) | [Quick Start Guide](/docs/quickstart/) | [Syntax Reference](/docs/syntax-reference.md) | [Examples](/docs/examples.md) | [FAQ](/docs/faq.md)  |
-|----------|--------------|-------------|------------------|------------------|------------------|
+| Overview | [Installation](/docs/installation) | [Quick Start Guide](/docs/quickstart/) | [Concepts](/docs/concepts.md) | [Syntax Reference](/docs/syntax-reference.md) | [Examples](/docs/examples.md) | [FAQ](/docs/faq.md)  |
+|----------|--------------|-------------|------------------|------------------|------------------|------------------|
 
 > *Important: This release is a *developer preview* and is free and open-source from Confluent under the Apache 2.0 license.*
 
 # Overview
-KSQL is an open source streaming SQL engine that implements continuous, interactive queries against Apache Kafka™. It allows you to query, read, write, and process data in Apache Kafka in real-time, at scale using SQL an SQL-like commands. KSQL interacts directly with the [Kafka Streams API](http://docs.confluent.io/current/streams/concepts.html), removing the requirement of building a Java app. 
+KSQL is an open source streaming SQL engine that implements continuous, interactive queries against Apache Kafka™. It allows you to query, read, write, and process data in Apache Kafka in real-time, at scale using SQL commands. KSQL interacts directly with the [Kafka Streams API](http://docs.confluent.io/current/streams/concepts.html), removing the requirement of building a Java app. 
 
+### Use cases
 Common KSQL use cases are:
 
 - Fraud detection - identify and act on out of the ordinary data to provide real-time awareness. 
@@ -33,19 +34,11 @@ A topic is a category or feed name where records are published. For more informa
 
 ## Modes of operation
 
-You can use KSQL in stand-alone mode or in client-server mode.
-
-In stand-alone mode, both the KSQL client and server components are co-located on the same machine, in the same JVM, and are started together which makes it convenient for local development and testing.
-
-![alt text](https://user-images.githubusercontent.com/2977624/29090610-f4b11096-7c34-11e7-8a63-85c9ead22bc3.png)
-
-In client-server mode, you can run a pool of KSQL servers on remote machines, VMs, or containers and the CLI connects to them over HTTP.
-
-![alt text](https://user-images.githubusercontent.com/2977624/29090617-fab5e930-7c34-11e7-9eee-0554192854d5.png)
+You can use KSQL in standalone, client-server, application, and embedded modes. See this [document](/docs/concepts/) for more information.
 
 ## Getting Started
 
-* Beginners: Try the [interactive quick start](/quickstart/). The quick start configures a single instance in a lightweight Docker container or in a Kafka cluster. It demonstrates a simple workflow using KSQL to write streaming queries against data in Kafka.
+* Beginners: Try the [interactive quick start](/docs/quickstart/). The quick start configures a single instance in a lightweight Docker container or in a Kafka cluster. It demonstrates a simple workflow using KSQL to write streaming queries against data in Kafka.
 * Advanced users: Try the [end-to-end KSQL demo](https://github.com/confluentinc/ksql).
 
 
