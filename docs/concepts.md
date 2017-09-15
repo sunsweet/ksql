@@ -38,7 +38,7 @@ A table is a view of a stream, or another table, and represents a collection of 
 ## Standalone mode
 
 In stand-alone mode, both the KSQL client and server components are co-located on the same machine, in the same JVM,
-and are started together.  This make standalone mode very convenient for local development and testing.
+and are started together.  This makes standalone mode very convenient for local development and testing.
 
 ![Standalone mode](/docs/img/standalone-mode.png)
 
@@ -51,10 +51,13 @@ To run KSQL in standalone mode:
         $ ./bin/ksql-cli local
         ```
 
-    -  Start with custom settings:
+    -  Start with [custom settings](/docs/syntax-reference.md#configuring-ksql), pointing KSQL at a specific
+       Kafka cluster (see Kafka's [bootstrap.servers](https://kafka.apache.org/documentation/#newconsumerconfigs)
+       setting):
 
         ```bash
-        $ ./bin/ksql-cli local --properties-file path/to/ksql-cli.properties
+        $ ./bin/ksql-cli local --bootstrap-server kafka-broker-1:9092 \
+                               --properties-file path/to/ksql-cli.properties
         ```
 
 
@@ -74,10 +77,17 @@ To run KSQL in client-server mode:
         $ ./bin/ksql-server-start
         ```
 
-    -  Start with custom settings:
+    -  Start with [custom settings](/docs/syntax-reference.md#configuring-ksql), pointing KSQL at a specific
+       Kafka cluster (see Kafka's [bootstrap.servers](https://kafka.apache.org/documentation/#newconsumerconfigs)
+       setting):
 
         ```bash
-        $ ./bin/ksql-server-start --properties-file ksql-server.properties
+        $ cat ksql-server.properties
+        # Must set at least the following two properties
+        ksql.service.id=my-ksql-server-pool
+        bootstrap.servers=kafka-broker-1:9092
+
+        $ ./bin/ksql-server-start ksql-server.properties
         ```
 - Start any number of CLIs, specifying a KSQL server address as the `remote` endpoint:
 
